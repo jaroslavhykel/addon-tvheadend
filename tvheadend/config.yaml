@@ -1,0 +1,32 @@
+---
+name: TVHeadend
+version: dev
+slug: tvheadend
+description: TV streaming server and recorder
+url: "https://github.com/jaroslavhykel/addon-tvheadend"
+ingress: true
+ingress_port: 0
+ingress_stream: true
+init: false
+panel_icon: mdi:television
+arch:
+  - aarch64
+host_network: true
+video: true
+usb: true
+udev: true
+homeassistant_api: true
+map:
+  - addon_config:rw
+  - share:rw
+  - media:rw
+options:
+  system_packages: []
+  init_commands: []
+  args: ""
+schema:
+  system_packages:
+    - str?
+  init_commands:
+    - str?
+  args: str?
