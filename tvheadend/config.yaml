@@ -4,23 +4,27 @@ version: dev
 slug: tvheadend
 description: TV streaming server and recorder
 url: "https://github.com/jaroslavhykel/addon-tvheadend"
-ingress: true
-ingress_port: 0
-ingress_stream: true
 init: false
 panel_icon: mdi:television
 arch:
   - aarch64
 host_network: true
-video: true
+webui: "http://[HOST]:[PORT:9981]/"
 usb: true
 udev: true
 homeassistant_api: true
+ports_description:
+  9981/tcp: TVH Web Interface
+  9982/tcp: TVH HTSP
 map:
-  - addon_config:rw
+  - config:rw
   - share:rw
   - media:rw
 options:
+  o2_username: "name"
+  o2_password: "password"
+  o2_deviceid: "Android"
+  o2_webserver_ip: "127.0.0.1"
   system_packages: []
   init_commands: []
   args: ""

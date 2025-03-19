@@ -51,7 +51,6 @@ RUN \
     libvpx \
     libxml2 \
     libxslt \
-    linux-headers \
     opus \
     pcre2 \
     perl \
@@ -93,7 +92,22 @@ RUN \
   && tar xfJ /picons/tmp/srp.tar.xz -C /picons/srp --strip-components=1 \
   && rm -rf /picons/tmp
 
-# Copy root filesystem
+  # Install script.o2tv.server
+RUN \
+  apk add --no-cache --virtual .build-deps \
+  zip \
+  wget \
+  && mkdir -p /usr/local/lib/ \
+  && cd /usr/local/lib \
+  && wget https://github.com/waladir/script.o2tv.server/archive/refs/heads/master.zip \
+  && unzip master.zip \
+  && rm master.zip \
+  && cd script.o2tv.server-master \
+  && cp config.txt.sample config.txt \
+  && chmod +x server.py \
+  && apk del --no-cache --purge .build-deps
+
+  # Copy root filesystem
 COPY rootfs /
 
 # Build arguments
