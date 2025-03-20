@@ -12,12 +12,12 @@ ENV HOME="/config"
 
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
-COPY bin/tvheadend-4.3-2375~g653bd0400-aarch64.zstd.tar /tmp/
+COPY bin/tvheadend-4.3-2375~g653bd0400-aarch64.gz.tar /tmp/
 
 RUN \
     cd / && \
-    tar xf /tmp/tvheadend-4.3-2375~g653bd0400-aarch64.zstd.tar && \
-    rm -f /tmp/tvheadend-4.3-2375~g653bd0400-aarch64.zstd.tar
+    tar xf /tmp/tvheadend-4.3-2375~g653bd0400-aarch64.gz.tar && \
+    rm -f /tmp/tvheadend-4.3-2375~g653bd0400-aarch64.gz.tar
 
 ARG PICONS_RELEASE="2025-03-04--22-19-23"
 
