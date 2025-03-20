@@ -74,8 +74,6 @@ RUN \
     -r /tmp/requirements.txt \
     && apk del --no-cache --purge .build-deps
 
-COPY --from=builder /tmp/tvheadend-build/usr/ /usr/
-
 SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
 
 RUN \
