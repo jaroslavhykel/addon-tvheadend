@@ -1,9 +1,9 @@
 ---
 name: TVHeadend
-version: dev
+version: 0.0.1
 slug: tvheadend
-description: TV streaming server and recorder
-url: "https://github.com/jaroslavhykel/addon-tvheadend"
+description: TV streaming server and recorder with O2 web server
+url: "https://github.com/jaroslavhykel/addon-tvheadend/tree/main/tvheadend"
 init: false
 panel_icon: mdi:television
 arch:
@@ -13,6 +13,9 @@ webui: "http://[HOST]:[PORT:9981]/"
 usb: true
 udev: true
 homeassistant_api: true
+hassio_api: true
+hassio_role: manager
+stdin: true
 ports_description:
   9981/tcp: TVH Web Interface
   9982/tcp: TVH HTSP
