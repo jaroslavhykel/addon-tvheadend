@@ -24,14 +24,22 @@ map:
   - share:rw
   - media:rw
 options:
-  o2_username: "name"
-  o2_password: "password"
-  o2_deviceid: "Android"
+  o2_username: ""
+  o2_password: ""
+  o2_deviceid: "Android_15"
   o2_webserver_ip: "127.0.0.1"
   system_packages: []
   init_commands: []
   args: ""
 schema:
+  o2_username:
+    - str?
+  o2_password:
+    - str?
+  o2_deviceid:
+    - str?
+  o2_webserver_ip:
+    - str?
   system_packages:
     - str?
   init_commands:
