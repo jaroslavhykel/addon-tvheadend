@@ -66,6 +66,7 @@ RUN \
     zlib \
     py3-pip \
     libxslt \
+    socat \
     xmlstarlet \
     && pip3 install \
     --no-cache-dir \
